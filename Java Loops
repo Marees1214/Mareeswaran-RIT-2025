@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Series {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of queries
+        int queries = scanner.nextInt();
+
+        for (int q = 0; q < queries; q++) {
+            // Read the values for each query
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            int n = scanner.nextInt();
+
+            // Print the series for the current query
+            printSeries(a, b, n);
+        }
+
+        scanner.close();
+    }
+
+    private static void printSeries(int a, int b, int n) {
+        int result = a;
+
+        for (int i = 0; i < n; i++) {
+            result += (int) Math.pow(2, i) * b;
+            System.out.print(result + " ");
+        }
+
+        System.out.println();
+    }
+}
