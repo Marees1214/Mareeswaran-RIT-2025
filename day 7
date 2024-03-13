@@ -1,0 +1,36 @@
+def findPoint(px, py, qx, qy):
+    dx = qx - px
+    dy = qy - py
+    
+    rx = qx + dx
+    ry = qy + dy
+    
+    return [rx, ry]
+
+def main():
+    n = int(input())
+    for _ in range(n):
+        px, py, qx, qy = map(int, input().split())
+        result = findPoint(px, py, qx, qy)
+        print(result[0], result[1])
+
+if __name__ == "__main__":
+    main()
+
+"logic 2:"
+
+def find_reflected_point(px, py, qx, qy):
+    dx = qx - px
+    dy = qy - py
+    rx, ry = qx + dx, qy + dy
+    
+    return rx, ry
+
+def main():
+    n = int(input())
+    reflected_points = [find_reflected_point(*map(int, input().split())) for _ in range(n)]
+    for rx, ry in reflected_points:
+        print(rx, ry)
+
+if __name__ == "__main__":
+    main()
